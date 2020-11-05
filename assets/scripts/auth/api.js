@@ -30,8 +30,17 @@ const changePassword = (data) => {
   })
 }
 
+const newClimb = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/create',
+    method: 'POST',
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  newClimb
 }

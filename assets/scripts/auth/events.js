@@ -41,8 +41,21 @@ const onChangePassword = (event) => {
     .catch(ui.onChangePasswordFailure)
 }
 
+const onNewClimb = (event) => {
+  event.preventDefault()
+
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  api.newClimb(data)
+    .then(ui.onNewClimbSuccess)
+    .catch(ui.onNewClimbFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePassword
+  onChangePassword,
+  onNewClimb
 }

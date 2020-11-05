@@ -12,7 +12,9 @@ $(() => {
   $('#sign-up-form').on('submit', events.onSignUp)
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-password-form').on('submit', events.onChangePassword)
+  $('#new-climb-form').on('submit', events.onNewClimb)
 
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
+  $('#new-climb-form').hide()
 })

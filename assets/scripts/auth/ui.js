@@ -18,10 +18,9 @@ const onSignInSuccess = (response) => {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out-form').show()
-  $('#start-new-game-form').show()
+  $('#new-climb-form').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#games-played').show()
   $('#sign-in-form')[0].reset()
   $('#sign-up-form')[0].reset()
   $('#change-password-form')[0].reset()
@@ -39,10 +38,20 @@ const onChangePasswordSuccess = (response) => {
   $('#change-password-form')[0].reset()
 }
 
+const onNewClimbSuccess = (response) => {
+  $('#message').text('New climb added!')
+}
+
+const onNewClimbFailure = () => {
+  $('#message').text('Failed to add new climb, try again!')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onChangePasswordSuccess
+  onChangePasswordSuccess,
+  onNewClimbSuccess,
+  onNewClimbFailure
 }
