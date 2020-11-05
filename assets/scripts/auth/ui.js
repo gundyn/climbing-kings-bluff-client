@@ -16,8 +16,7 @@ const onSignInSuccess = (response) => {
   $('#message').text('Sign in successful! ' + response.user.email)
 
   store.user = response.user
-  console.log('store: ', store)
-  console.log('response ', response)
+  console.log('store ', store)
   $('#change-password-form').show()
   $('#sign-out-form').show()
   $('#new-climb-form').show()
@@ -42,8 +41,6 @@ const onChangePasswordSuccess = (response) => {
 
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
-  store.user = response.token
-  console.log('store ', store)
 }
 
 const onNewClimbFailure = () => {

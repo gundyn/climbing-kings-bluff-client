@@ -32,8 +32,11 @@ const changePassword = (data) => {
 
 const newClimb = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/create',
+    url: config.apiUrl + '/climbs',
     method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
     data: data
   })
 }
