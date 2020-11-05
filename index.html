@@ -12,6 +12,72 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Climbing Kings Bluff</h1>
+      <p id="message"></p>
+
+  <section>
+    <form id="sign-up-form">
+      <fieldset>
+        <legend>Sign-up!</legend>
+
+        <label for="sign-up-email">Email:</label>
+        <input id="sign-up-email" type="email" name="credentials[email]" placeholder="example@email.com">
+
+        <label for="sign-up-password">Password:</label>
+        <input id="sign-up-password" type="password" name="credentials[password]" placeholder="password">
+
+        <label for="sign-up-password_confirmation">Confirm Password:</label>
+        <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+
+        <input type="submit" value="Sign-up!">
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="sign-in-form">
+      <fieldset>
+        <legend>Sign in!</legend>
+
+        <label for="sign-in-email">Email:</label>
+        <input id="sign-in-email" type="email" name="credentials[email]" placeholder="example@email.com">
+
+        <label for="sign-in-password">Password:</label>
+        <input id="sign-in-password" type="password" name="credentials[password]" placeholder="password">
+
+        <input type="submit" value="Sign in!">
+
+    </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="change-password-form">
+      <fieldset>
+        <legend>Change password!</legend>
+
+        <label for="old-password">Old passwaord:</label>
+        <input id="old-password" type="password" name="passwords[old]" placeholder="old password">
+
+        <label for="new-password">New password</label>
+        <input id="new-password" type="password" name="passwords[new]" placeholder="new password">
+
+        <input type="submit" value="Change password">
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="sign-out-form">
+      <fieldset>
+        <legend>Sign Out!</legend>
+
+        <input type="submit" value="Sign out!">
+
+      </fieldset>
+    </form>
+  </section>
     </body>
 </html>
