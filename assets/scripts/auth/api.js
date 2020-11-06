@@ -32,7 +32,7 @@ const changePassword = (data) => {
 
 const newClimb = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/climbs' + store.user.token,
+    url: config.apiUrl + '/climbs',
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token

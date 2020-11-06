@@ -15,8 +15,10 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (response) => {
   $('#message').text('Sign in successful! ' + response.user.email)
 
+  // I can see the token here in the user object
   store.user = response.user
-  console.log('store ', store)
+  console.log('sign in stored token ', store.user.token)
+
   $('#change-password-form').show()
   $('#sign-out-form').show()
   $('#new-climb-form').show()
@@ -41,10 +43,12 @@ const onChangePasswordSuccess = (response) => {
 
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
+  // $(store.user.token).prependTo(response)
 }
 
 const onNewClimbFailure = () => {
   $('#message').text('Failed to add new climb, try again!')
+  console.log('fail token ', store.user.token)
 }
 
 module.exports = {
