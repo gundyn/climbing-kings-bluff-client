@@ -70,7 +70,9 @@ const onSeeAllClimbsSuccess = (response) => {
       <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
-      <button id="destroy-climb" class="climb-delete">Delete Climb!</button>
+
+      <button class="climb-delete" value="Delete Climb!">Delete climb!</button>
+
       ID: ${currentClimb._id}
       </div>
       <br>
