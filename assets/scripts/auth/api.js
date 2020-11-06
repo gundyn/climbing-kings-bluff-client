@@ -52,10 +52,22 @@ const seeClimbs = (data) => {
   })
 }
 
+const deleteClimb = (data) => {
+  console.log('data:', data)
+  return $.ajax({
+    url: config.apiUrl + '/climbs/' + data.climb.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   newClimb,
-  seeClimbs
+  seeClimbs,
+  deleteClimb
 }

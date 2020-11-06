@@ -21,6 +21,8 @@ const onSignInSuccess = (response) => {
   $('#sign-out-form').show()
   $('#new-climb-form').show()
   $('#see-all-climbs-form').show()
+  $('#see-a-climb-form').show()
+  $('#climb-delete-form').show()
 
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
@@ -57,17 +59,17 @@ const onNewClimbFailure = () => {
 
 const onSeeAllClimbsSuccess = (response) => {
   $('#message').text('')
-  console.log('onSeeAll response is: ', response)
 
   const climbs = response.climbs
 
   $('#see-all-climbs').html('')
-
+  // lets me display all climbs in the browser
   climbs.forEach(function (currentClimb) {
     const climbHTML = (`
-      <h3>Name: ${currentClimb.name}</h4>
+      <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
+      <p>ID: ${currentClimb._id}</p>
       <br>
       `)
     $('#see-all-climbs').append(climbHTML)
@@ -78,14 +80,40 @@ const onSeeAllClimbsFailure = () => {
   $('#message').text('Failed to see all climbs, please try again!')
 }
 
+const onDeleteSuccess = () => {
+  $('#delte-climb-message').text('Climb successfully deleted!')
+
+  $('#message').text('Climbs have changed! Click "Get all climbs" again to see all climbs')
+
+  $('#delte-climb-message').addClass('success')
+
+  setTimeout(() => {
+    $('#delte-climb-message').text('')
+    $('#delte-climb-message').removeClass('success')
+  }, 5000)
+
+  $('form').trigger('reset')
+}
+
+const onDeleteFailure = () => {
+  $('#message').text('Failed to delete a climb, please try again!')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
+
   onSignInSuccess,
   onSignInFailure,
+
   onChangePasswordSuccess,
+
   onNewClimbSuccess,
   onNewClimbFailure,
+
   onSeeAllClimbsSuccess,
-  onSeeAllClimbsFailure
+  onSeeAllClimbsFailure,
+
+  onDeleteSuccess,
+  onDeleteFailure
 }

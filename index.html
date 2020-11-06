@@ -103,14 +103,27 @@
   <section>
     <form id="see-all-climbs-form">
       <fieldset>
-        <legend>See all climbs!</legend>
+        <legend>Get all climbs!</legend>
 
-        <input type="submit" value="See all Climbs!">
+        <input type="submit" value="Get all Climbs!">
 
       </fieldset>
     </form>
   </section>
   <p id="see-all-climbs"></p>
+
+  <section>
+    <form id="climb-delete-form">
+      <fieldset>
+        <legend>Delete one climb!</legend>
+
+        <input required type="text" name="climb[id]" placeholder="Climb ID here">
+        <input type="submit" value="Delete!">
+
+      </fieldset>
+    </form>
+  </section>
+  <p id="delte-climb-message" class="user-feedback"></p>
 
     </body>
 </html>
