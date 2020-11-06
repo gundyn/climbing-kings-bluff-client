@@ -47,11 +47,8 @@ const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
 
   $('#new-climb-form')[0].reset()
-  console.log('ui.js onNewClimbSuccess response ', response)
 
   store.climb = response
-  console.log('ui.js store.climb ', store.climb)
-  console.log('ui.js response ', response)
 }
 
 const onNewClimbFailure = () => {
@@ -59,8 +56,22 @@ const onNewClimbFailure = () => {
 }
 
 const onSeeAllClimbsSuccess = (response) => {
-  $('#message').text('All climbs ' + response.climbs)
-  console.log('onSeeAll response ', response.climbs)
+  $('#message').text('')
+  console.log('onSeeAll response is: ', response)
+
+  const climbs = response.climbs
+
+  $('#see-all-climbs').html('')
+
+  climbs.forEach(function (currentClimb) {
+    const climbHTML = (`
+      <h3>Name: ${currentClimb.name}</h4>
+      <p>Grade: ${currentClimb.grade}</p>
+      <p>Rating: ${currentClimb.rating}</p>
+      <br>
+      `)
+    $('#see-all-climbs').append(climbHTML)
+  })
 }
 
 const onSeeAllClimbsFailure = () => {

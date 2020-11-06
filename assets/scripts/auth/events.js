@@ -56,10 +56,7 @@ const onNewClimb = (event) => {
 const onSeeAllClimbs = (event) => {
   event.preventDefault()
 
-  const data = store.climb
-  console.log('data ', data)
-
-  api.seeClimbs(data)
+  api.seeClimbs()
     .then(ui.onSeeAllClimbsSuccess)
     .catch(ui.onSeeAllClimbsFailure)
 }

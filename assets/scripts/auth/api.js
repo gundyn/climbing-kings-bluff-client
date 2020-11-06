@@ -51,6 +51,7 @@ const seeClimbs = (data) => {
     data: data
   })
 }
+
 module.exports = {
   signUp,
   signIn,
