@@ -47,7 +47,7 @@ const onNewClimb = (event) => {
   const form = event.target
 
   const data = getFormFields(form)
-
+  // do I need to put the token here somehow?
   api.newClimb(data)
     .then(ui.onNewClimbSuccess)
     .catch(ui.onNewClimbFailure)
