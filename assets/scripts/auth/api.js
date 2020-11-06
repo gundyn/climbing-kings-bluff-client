@@ -31,6 +31,7 @@ const changePassword = (data) => {
 }
 
 const newClimb = (data) => {
+  console.log('data ', data)
   return $.ajax({
     url: config.apiUrl + '/climbs',
     method: 'POST',

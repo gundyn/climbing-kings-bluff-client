@@ -46,21 +46,10 @@ const onNewClimb = (event) => {
   // const token = store.user.token
   // console.log('events.js token ', token)
   const form = event.target
-  //
-  // const data = getFormFields(form)
+
+  const data = getFormFields(form)
   // do I need to put the token here somehow?
 
-  const data = {
-    climb: [
-      {
-        owner: store.user.token,
-        name: ,
-        rating: ,
-        grade:
-      }
-    ]
-  }
-  console.log('data ', data)
   api.newClimb(data)
     .then(ui.onNewClimbSuccess)
     .catch(ui.onNewClimbFailure)

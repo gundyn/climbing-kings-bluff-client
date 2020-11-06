@@ -43,7 +43,7 @@ const onChangePasswordSuccess = (response) => {
 
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
-  // $(store.user.token).prependTo(response)
+  // $(store.user.token).data()
 }
 
 const onNewClimbFailure = () => {
