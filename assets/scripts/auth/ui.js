@@ -15,15 +15,16 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (response) => {
   $('#message').text('Sign in successful! ' + response.user.email)
 
-  // I can see the token here in the user object
   store.user = response.user
-  console.log('sign in stored token ', store.user.token)
 
   $('#change-password-form').show()
   $('#sign-out-form').show()
   $('#new-climb-form').show()
+  $('#see-all-climbs-form').show()
+
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
+
   $('#sign-in-form')[0].reset()
   $('#sign-up-form')[0].reset()
   $('#change-password-form')[0].reset()
@@ -36,6 +37,7 @@ const onSignInFailure = () => {
 
 const onChangePasswordSuccess = (response) => {
   $('#message').text('Password change successful!')
+
   $('#sign-in-form')[0].reset()
   $('#sign-up-form')[0].reset()
   $('#change-password-form')[0].reset()
@@ -43,12 +45,26 @@ const onChangePasswordSuccess = (response) => {
 
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
-  // $(store.user.token).data()
+
+  $('#new-climb-form')[0].reset()
+  console.log('ui.js onNewClimbSuccess response ', response)
+
+  store.climb = response
+  console.log('ui.js store.climb ', store.climb)
+  console.log('ui.js response ', response)
 }
 
 const onNewClimbFailure = () => {
   $('#message').text('Failed to add new climb, try again!')
-  console.log('fail token ', store.user.token)
+}
+
+const onSeeAllClimbsSuccess = (response) => {
+  $('#message').text('All climbs ' + response.climbs)
+  console.log('onSeeAll response ', response.climbs)
+}
+
+const onSeeAllClimbsFailure = () => {
+  $('#message').text('Failed to see all climbs, please try again!')
 }
 
 module.exports = {
@@ -58,5 +74,7 @@ module.exports = {
   onSignInFailure,
   onChangePasswordSuccess,
   onNewClimbSuccess,
-  onNewClimbFailure
+  onNewClimbFailure,
+  onSeeAllClimbsSuccess,
+  onSeeAllClimbsFailure
 }

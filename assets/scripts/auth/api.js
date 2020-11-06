@@ -31,7 +31,6 @@ const changePassword = (data) => {
 }
 
 const newClimb = (data) => {
-  console.log('data ', data)
   return $.ajax({
     url: config.apiUrl + '/climbs',
     method: 'POST',
@@ -42,9 +41,20 @@ const newClimb = (data) => {
   })
 }
 
+const seeClimbs = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/climbs',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  newClimb
+  newClimb,
+  seeClimbs
 }

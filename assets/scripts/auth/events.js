@@ -43,21 +43,31 @@ const onChangePassword = (event) => {
 
 const onNewClimb = (event) => {
   event.preventDefault()
-  // const token = store.user.token
-  // console.log('events.js token ', token)
+
   const form = event.target
 
   const data = getFormFields(form)
-  // do I need to put the token here somehow?
 
   api.newClimb(data)
     .then(ui.onNewClimbSuccess)
     .catch(ui.onNewClimbFailure)
 }
 
+const onSeeAllClimbs = (event) => {
+  event.preventDefault()
+
+  const data = store.climb
+  console.log('data ', data)
+
+  api.seeClimbs(data)
+    .then(ui.onSeeAllClimbsSuccess)
+    .catch(ui.onSeeAllClimbsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onNewClimb
+  onNewClimb,
+  onSeeAllClimbs
 }
