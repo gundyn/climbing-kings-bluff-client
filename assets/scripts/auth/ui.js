@@ -66,10 +66,13 @@ const onSeeAllClimbsSuccess = (response) => {
   // lets me display all climbs in the browser
   climbs.forEach(function (currentClimb) {
     const climbHTML = (`
+      <div data-climbId=${currentClimb._id}>
       <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
-      <p>ID: ${currentClimb._id}</p>
+      <button id="destroy-climb" class="climb-delete">Delete Climb!</button>
+      ID: ${currentClimb._id}
+      </div>
       <br>
       `)
     $('#see-all-climbs').append(climbHTML)
