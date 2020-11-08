@@ -15,7 +15,9 @@ $(() => {
   $('#new-climb-form').on('submit', events.onNewClimb)
   $('#see-all-climbs-form').on('submit', events.onSeeAllClimbs)
   $('#climb-delete-form').on('submit', events.onDeleteClimb)
+  $('#climb-update-form').on('submit', events.onUpdateClimb)
 
+  $('#climb-update-form').hide()
   $('#climb-delete-form').hide()
   $('#see-all-climbs-form').hide()
   $('#change-password-form').hide()

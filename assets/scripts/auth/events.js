@@ -71,11 +71,22 @@ const onDeleteClimb = (event) => {
     .catch(ui.onDeleteFailure)
 }
 
+const onUpdateClimb = (event) => {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+
+  api.updateClimb(data)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onNewClimb,
   onSeeAllClimbs,
-  onDeleteClimb
+  onDeleteClimb,
+  onUpdateClimb
 }

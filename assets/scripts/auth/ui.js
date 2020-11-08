@@ -22,7 +22,6 @@ const onSignInSuccess = (response) => {
   $('#new-climb-form').show()
   $('#see-all-climbs-form').show()
   $('#see-a-climb-form').show()
-  $('#climb-delete-form').show()
 
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
@@ -47,6 +46,7 @@ const onChangePasswordSuccess = (response) => {
 
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
+  $('#see-all-climbs').hide()
 
   $('#new-climb-form')[0].reset()
 
@@ -59,6 +59,9 @@ const onNewClimbFailure = () => {
 
 const onSeeAllClimbsSuccess = (response) => {
   $('#message').text('')
+  $('#see-all-climbs').show()
+  $('#climb-delete-form').show()
+  $('#climb-update-form').show()
 
   const climbs = response.climbs
 
@@ -70,10 +73,8 @@ const onSeeAllClimbsSuccess = (response) => {
       <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
-
+      <p>ID: ${currentClimb._id}</p>
       <button class="climb-delete" value="Delete Climb!">Delete climb!</button>
-
-      ID: ${currentClimb._id}
       </div>
       <br>
       `)
@@ -98,10 +99,35 @@ const onDeleteSuccess = () => {
   }, 5000)
 
   $('form').trigger('reset')
+  $('#see-all-climbs').hide()
+  $('#climb-delete-form').hide()
+  $('#climb-update-form').hide()
 }
 
 const onDeleteFailure = () => {
   $('#message').text('Failed to delete a climb, please try again!')
+}
+
+const onUpdateSuccess = () => {
+  $('#update-climb-message').text('You successfully updated the climb')
+
+  $('#message').text('Climbs have changed! Click "Get all climbs" again to see all climbs.')
+
+  $('#update-climb-message').addClass('success')
+
+  setTimeout(() => {
+    $('#update-climb-message').text('')
+    $('#update-climb-message').removeClass('success')
+  }, 5000)
+
+  $('form').trigger('reset')
+  $('#see-all-climbs').hide()
+  $('#climb-delete-form').hide()
+  $('#climb-update-form').hide()
+}
+
+const onUpdateFailure = () => {
+  $('#message').text('Failed to update a climb, please try again!')
 }
 
 module.exports = {
@@ -120,5 +146,8 @@ module.exports = {
   onSeeAllClimbsFailure,
 
   onDeleteSuccess,
-  onDeleteFailure
+  onDeleteFailure,
+
+  onUpdateSuccess,
+  onUpdateFailure
 }
