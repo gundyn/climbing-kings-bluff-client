@@ -68,7 +68,6 @@ const onDeleteClimb = (event) => {
 
   // finds the id of the button to delete a climb
   const climbId = $(event.target).data('climb-id')
-  console.log('climbId: ', climbId)
 
   api.deleteClimb(climbId)
     .then(ui.onDeleteSuccess)
@@ -77,10 +76,16 @@ const onDeleteClimb = (event) => {
 
 const onUpdateClimb = (event) => {
   event.preventDefault()
+  console.log('event: ', event)
+  console.log('event.target: ', event.target)
 
-  const data = getFormFields(event.target)
+  const data = getFormFields()
+  console.log('data: ', data)
 
-  api.updateClimb(data)
+  const id = $(event.target).data('climb-id')
+  console.log('id: ', id)
+
+  api.updateClimb(data, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }

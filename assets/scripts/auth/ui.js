@@ -76,7 +76,26 @@ const onSeeAllClimbsSuccess = (response) => {
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
       <p>ID: ${currentClimb._id}</p>
+
       <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
+
+      <br>
+
+      <form id="climb-update-form">
+        <fieldset>
+
+        <label for="update-climb-name">Climb name:</label>
+        <input id="update-climb-name" name="climb[name]" type="text" placeholder="name">
+
+        <label for="update-climb-grade">Grade:</label>
+        <input id="update-climb-grade" name="climb[grade]" type="text" placeholder="grade">
+
+        <label for="update-climb-rating">Rating:</label>
+        <input id="update-climb-rating" name="climb[rating]" type="text" placeholder="rating 1-5">
+
+        <button class="climb-update" type="click" data-climb-id=${currentClimb._id} data-climb-name=${'#update-climb-name'} value="Update Climb">Update climb!</button>
+        </fieldset>
+      </form>
       <br>
       `)
     $('#see-all-climbs').append(climbHTML)

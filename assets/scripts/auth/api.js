@@ -63,9 +63,11 @@ const deleteClimb = (climbId) => {
   })
 }
 
-const updateClimb = (data) => {
+const updateClimb = (data, id) => {
+  console.log('data: ', data)
+  console.log('id: ', id)
   return $.ajax({
-    url: config.apiUrl + '/climbs/',
+    url: config.apiUrl + '/climbs/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token

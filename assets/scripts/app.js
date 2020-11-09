@@ -15,9 +15,10 @@ $(() => {
   $('#new-climb-form').on('submit', events.onNewClimb)
   $('#see-all-climbs-form').on('submit', events.onSeeAllClimbs)
   $('#climb-delete-form').on('submit', events.onDeleteClimb)
-  $('#climb-update-form').on('submit', events.onUpdateClimb)
+  // $('#climb-update-form').on('submit', events.onUpdateClimb)
   $('#see-my-climbs-form').on('submit', events.onSeeMyClimbs)
   $('body').on('click', '.climb-delete', events.onDeleteClimb)
+  $('body').on('click', '.climb-update', events.onUpdateClimb)
 
   $('#signed-in-user').hide()
   $('#see-my-climbs-form').hide()
