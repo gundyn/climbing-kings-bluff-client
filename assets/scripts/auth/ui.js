@@ -39,6 +39,27 @@ const onSignInFailure = () => {
   $('#sign-up-form')[0].reset()
 }
 
+const onSignOutSuccess = () => {
+  $('#message').text('Sign out successful')
+
+  $('#change-password-form').hide()
+  $('#sign-out-form').hide()
+  $('#signed-in-user').hide()
+  $('#new-climb-form').hide()
+  $('#see-all-climbs-form').hide()
+
+  $('#sign-up-form').show()
+  $('#sign-in-form').show()
+
+  $('#sign-in-form')[0].reset()
+  $('#sign-up-form')[0].reset()
+  $('#change-password-form')[0].reset()
+}
+
+const onSignOutFailure = () => {
+  $('#message').text('Sign out failure, please try again!')
+}
+
 const onChangePasswordSuccess = (response) => {
   $('#message').text('Password change successful!')
 
@@ -93,7 +114,7 @@ const onSeeAllClimbsSuccess = (response) => {
         <label for="update-climb-rating">Rating:</label>
         <input id="update-climb-rating" name="climb[rating]" type="text" placeholder="rating 1-5">
 
-        <button class="climb-update" type="click" data-climb-id=${currentClimb._id} data-climb-name=${'#update-climb-name'} value="Update Climb">Update climb!</button>
+        <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
         </fieldset>
       </form>
       <br>
@@ -190,5 +211,8 @@ module.exports = {
   onUpdateSuccess,
   onUpdateFailure,
 
-  onSeeMyClimbsSuccess
+  onSeeMyClimbsSuccess,
+
+  onSignOutSuccess,
+  onSignOutFailure
 }

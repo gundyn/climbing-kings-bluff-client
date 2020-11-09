@@ -29,6 +29,14 @@ const onSignIn = (event) => {
     .catch(ui.onSignInFailure)
 }
 
+const onSignOut = (event) => {
+  event.preventDefault()
+
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 const onChangePassword = (event) => {
   event.preventDefault()
 
@@ -79,7 +87,10 @@ const onUpdateClimb = (event) => {
   console.log('event: ', event)
   console.log('event.target: ', event.target)
 
-  const data = getFormFields()
+  const form = event.target
+  console.log('form: ', form)
+
+  const data = getFormFields(form)
   console.log('data: ', data)
 
   const id = $(event.target).data('climb-id')
@@ -108,5 +119,6 @@ module.exports = {
   onSeeAllClimbs,
   onDeleteClimb,
   onUpdateClimb,
-  onSeeMyClimbs
+  onSeeMyClimbs,
+  onSignOut
 }
