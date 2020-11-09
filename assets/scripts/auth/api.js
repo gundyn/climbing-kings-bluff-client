@@ -42,6 +42,7 @@ const newClimb = (data) => {
 }
 
 const seeClimbs = (data) => {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/climbs',
     method: 'GET',
@@ -52,10 +53,10 @@ const seeClimbs = (data) => {
   })
 }
 
-const deleteClimb = (data) => {
-  console.log('data:', data)
+const deleteClimb = (climbId) => {
+  console.log('data:', climbId)
   return $.ajax({
-    url: config.apiUrl + '/climbs/' + data.climb.id,
+    url: config.apiUrl + '/climbs/' + climbId,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -64,7 +65,6 @@ const deleteClimb = (data) => {
 }
 
 const updateClimb = (data) => {
-  console.log('data:', data)
   return $.ajax({
     url: config.apiUrl + '/climbs/',
     method: 'PATCH',
@@ -76,7 +76,6 @@ const updateClimb = (data) => {
 }
 
 const myClimbs = (data) => {
-  console.log('data: ', data)
   return $.ajax({
     url: config.apiUrl + '/climbs/',
     method: 'GET',

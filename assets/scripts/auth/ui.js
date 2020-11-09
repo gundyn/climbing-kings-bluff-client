@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store')
+const events = require('./events')
 
 const onSignUpSuccess = (response) => {
   $('#message').text('Thanks for signing up for Climb Kings Bluff! ' + response.user.email)
@@ -65,18 +66,17 @@ const onSeeAllClimbsSuccess = (response) => {
   $('#climb-update-form').show()
 
   const climbs = response.climbs
+  console.log('climbs: ', climbs)
 
   $('#see-all-climbs').html('')
   // lets me display all climbs in the browser
   climbs.forEach(function (currentClimb) {
     const climbHTML = (`
-      <div data-climbId=${currentClimb._id}>
       <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
       <p>ID: ${currentClimb._id}</p>
-      <button class="climb-delete" value="Delete Climb!">Delete climb!</button>
-      </div>
+      <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
       <br>
       `)
     $('#see-all-climbs').append(climbHTML)
@@ -134,6 +134,7 @@ const onUpdateFailure = () => {
 const onSeeMyClimbsSuccess = (response) => {
   $()
   const myClimbs = response.climbs
+  console.log('response.climbs: ', myClimbs)
 
   myClimbs.forEach(function (myCurrentClimbs) {
     const myClimbsHTML = (`
@@ -141,6 +142,7 @@ const onSeeMyClimbsSuccess = (response) => {
     <p>Grade: ${myCurrentClimbs.grade}</p>
     <p>Rating: ${myCurrentClimbs.rating}</p>
     <p>ID: ${myCurrentClimbs._id}</p>
+    <button class="climb-delete" type="button" data-climb-id=${myCurrentClimbs._id} value="Delete Climb!">Delete climb!</button>
     <br>
     `)
     $('#see-my-climbs').html(myClimbsHTML)

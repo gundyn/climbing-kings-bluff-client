@@ -56,17 +56,21 @@ const onNewClimb = (event) => {
 const onSeeAllClimbs = (event) => {
   event.preventDefault()
 
-  api.seeClimbs()
+  const data = store.user._id
+
+  api.seeClimbs(data)
     .then(ui.onSeeAllClimbsSuccess)
     .catch(ui.onSeeAllClimbsFailure)
 }
 
 const onDeleteClimb = (event) => {
   event.preventDefault()
+  console.log('event.target: ', event.target)
 
-  const data = getFormFields(event.target)
+  const climbId = $(event.target).data('climb-id')
+  console.log('climbId: ', climbId)
 
-  api.deleteClimb(data)
+  api.deleteClimb(climbId)
     .then(ui.onDeleteSuccess)
     .catch(ui.onDeleteFailure)
 }
@@ -85,7 +89,6 @@ const onSeeMyClimbs = (event) => {
   event.preventDefault()
 
   const data = store.user._id
-  console.log(store.user._id)
 
   api.myClimbs(data)
     .then(ui.onSeeMyClimbsSuccess)
