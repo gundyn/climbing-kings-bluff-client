@@ -42,7 +42,6 @@ const newClimb = (data) => {
 }
 
 const seeClimbs = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/climbs',
     method: 'GET',

@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('./../store')
-const events = require('./events')
 
 const onSignUpSuccess = (response) => {
   $('#message').text('Thanks for signing up for Climb Kings Bluff! ' + response.user.email)
@@ -15,6 +14,7 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = (response) => {
   $('#message').text('Sign in successful! ' + response.user.email)
+  $('#signed-in-user').text('Current user: ' + response.user.email)
 
   store.user = response.user
 
@@ -24,6 +24,7 @@ const onSignInSuccess = (response) => {
   $('#see-all-climbs-form').show()
   $('#see-a-climb-form').show()
   $('#see-my-climbs-form').show()
+  $('#signed-in-user').show()
 
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
@@ -66,7 +67,6 @@ const onSeeAllClimbsSuccess = (response) => {
   $('#climb-update-form').show()
 
   const climbs = response.climbs
-  console.log('climbs: ', climbs)
 
   $('#see-all-climbs').html('')
   // lets me display all climbs in the browser

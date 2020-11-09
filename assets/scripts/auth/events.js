@@ -65,8 +65,8 @@ const onSeeAllClimbs = (event) => {
 
 const onDeleteClimb = (event) => {
   event.preventDefault()
-  console.log('event.target: ', event.target)
 
+  // finds the id of the button to delete a climb
   const climbId = $(event.target).data('climb-id')
   console.log('climbId: ', climbId)
 

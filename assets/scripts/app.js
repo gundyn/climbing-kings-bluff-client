@@ -19,6 +19,7 @@ $(() => {
   $('#see-my-climbs-form').on('submit', events.onSeeMyClimbs)
   $('body').on('click', '.climb-delete', events.onDeleteClimb)
 
+  $('#signed-in-user').hide()
   $('#see-my-climbs-form').hide()
   $('#climb-update-form').hide()
   $('#climb-delete-form').hide()
