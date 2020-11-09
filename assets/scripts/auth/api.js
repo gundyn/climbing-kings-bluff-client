@@ -66,8 +66,20 @@ const deleteClimb = (data) => {
 const updateClimb = (data) => {
   console.log('data:', data)
   return $.ajax({
-    url: config.apiUrl + '/climbs/' + data.climb.id,
+    url: config.apiUrl + '/climbs/',
     method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
+const myClimbs = (data) => {
+  console.log('data: ', data)
+  return $.ajax({
+    url: config.apiUrl + '/climbs/',
+    method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -82,5 +94,6 @@ module.exports = {
   newClimb,
   seeClimbs,
   deleteClimb,
-  updateClimb
+  updateClimb,
+  myClimbs
 }

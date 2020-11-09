@@ -22,6 +22,7 @@ const onSignInSuccess = (response) => {
   $('#new-climb-form').show()
   $('#see-all-climbs-form').show()
   $('#see-a-climb-form').show()
+  $('#see-my-climbs-form').show()
 
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
@@ -130,6 +131,23 @@ const onUpdateFailure = () => {
   $('#message').text('Failed to update a climb, please try again!')
 }
 
+const onSeeMyClimbsSuccess = (response) => {
+  $()
+  const myClimbs = response.climbs
+
+  myClimbs.forEach(function (myCurrentClimbs) {
+    const myClimbsHTML = (`
+    <h3>Name: ${myCurrentClimbs.name}</h3>
+    <p>Grade: ${myCurrentClimbs.grade}</p>
+    <p>Rating: ${myCurrentClimbs.rating}</p>
+    <p>ID: ${myCurrentClimbs._id}</p>
+    <br>
+    `)
+    $('#see-my-climbs').html(myClimbsHTML)
+    $('form').trigger('reset')
+  })
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -149,5 +167,7 @@ module.exports = {
   onDeleteFailure,
 
   onUpdateSuccess,
-  onUpdateFailure
+  onUpdateFailure,
+
+  onSeeMyClimbsSuccess
 }

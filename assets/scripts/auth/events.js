@@ -81,6 +81,17 @@ const onUpdateClimb = (event) => {
     .catch(ui.onUpdateFailure)
 }
 
+const onSeeMyClimbs = (event) => {
+  event.preventDefault()
+
+  const data = store.user._id
+  console.log(store.user._id)
+
+  api.myClimbs(data)
+    .then(ui.onSeeMyClimbsSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -88,5 +99,6 @@ module.exports = {
   onNewClimb,
   onSeeAllClimbs,
   onDeleteClimb,
-  onUpdateClimb
+  onUpdateClimb,
+  onSeeMyClimbs
 }
