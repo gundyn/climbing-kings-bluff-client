@@ -48,6 +48,7 @@ const onSignOutSuccess = () => {
   $('#new-climb-form').hide()
   $('#see-all-climbs-form').hide()
   $('#see-all-climbs').hide()
+  $('#climb-update-form').hide()
 
   $('#sign-up-form').show()
   $('#sign-in-form').show()
