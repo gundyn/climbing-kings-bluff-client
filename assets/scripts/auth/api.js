@@ -74,8 +74,8 @@ const deleteClimb = (climbId) => {
 }
 
 const updateClimb = (data, id) => {
-  console.log('data: ', data)
-  console.log('id: ', id)
+  console.log('api data: ', data)
+  console.log('api id: ', id)
   return $.ajax({
     url: config.apiUrl + '/climbs/' + id,
     method: 'PATCH',

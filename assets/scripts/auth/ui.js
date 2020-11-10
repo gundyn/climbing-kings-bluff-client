@@ -85,7 +85,6 @@ const onSeeAllClimbsSuccess = (response) => {
   $('#message').text('')
   $('#see-all-climbs').show()
   $('#climb-delete-form').show()
-  $('#climb-update-form').show()
 
   const climbs = response.climbs
 
@@ -100,23 +99,8 @@ const onSeeAllClimbsSuccess = (response) => {
 
       <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
 
-      <br>
+      <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
 
-      <form id="climb-update-form">
-        <fieldset>
-
-        <label for="update-climb-name">Climb name:</label>
-        <input id="update-climb-name" name="climb[name]" type="text" placeholder="name">
-
-        <label for="update-climb-grade">Grade:</label>
-        <input id="update-climb-grade" name="climb[grade]" type="text" placeholder="grade">
-
-        <label for="update-climb-rating">Rating:</label>
-        <input id="update-climb-rating" name="climb[rating]" type="text" placeholder="rating 1-5">
-
-        <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
-        </fieldset>
-      </form>
       <br>
       `)
     $('#see-all-climbs').append(climbHTML)

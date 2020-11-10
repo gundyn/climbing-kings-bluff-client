@@ -82,23 +82,33 @@ const onDeleteClimb = (event) => {
     .catch(ui.onDeleteFailure)
 }
 
+const onUpdateClimbForm = (event) => {
+  event.preventDefault()
+  console.log(event)
+
+  const data = getFormFields(event.target)
+  console.log('getFormFields: ', data)
+
+  const id = store.id
+  console.log('climbId: ', id)
+
+  api.updateClimb(data, id)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
 const onUpdateClimb = (event) => {
   event.preventDefault()
   console.log('event: ', event)
   console.log('event.target: ', event.target)
 
-  const form = event.target
-  console.log('form: ', form)
-
-  const data = getFormFields(form)
-  console.log('data: ', data)
+  $('#climb-update-form').show()
 
   const id = $(event.target).data('climb-id')
   console.log('id: ', id)
 
-  api.updateClimb(data, id)
-    .then(ui.onUpdateSuccess)
-    .catch(ui.onUpdateFailure)
+  store.id = id
+  console.log('store.id: ', id)
 }
 
 const onSeeMyClimbs = (event) => {
@@ -120,5 +130,6 @@ module.exports = {
   onDeleteClimb,
   onUpdateClimb,
   onSeeMyClimbs,
-  onSignOut
+  onSignOut,
+  onUpdateClimbForm
 }
