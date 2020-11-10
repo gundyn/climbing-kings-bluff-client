@@ -82,44 +82,45 @@ const onDeleteClimb = (event) => {
     .catch(ui.onDeleteFailure)
 }
 
+// when you click the submit button on the update form
 const onUpdateClimbForm = (event) => {
   event.preventDefault()
-  console.log(event)
 
+  // get the data from the update form
   const data = getFormFields(event.target)
-  console.log('getFormFields: ', data)
 
+  // the stored id from onUpdateClimb
   const id = store.id
-  console.log('climbId: ', id)
 
+  // pass both the form data and the stored id to api
   api.updateClimb(data, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
 
+// when the update climb button is clicked
 const onUpdateClimb = (event) => {
   event.preventDefault()
-  console.log('event: ', event)
-  console.log('event.target: ', event.target)
 
+  // show the update form
   $('#climb-update-form').show()
-
+  // grab the current climb id for update
   const id = $(event.target).data('climb-id')
-  console.log('id: ', id)
 
+  // store the id so we can pass it to onUpdateClimbForm
   store.id = id
-  console.log('store.id: ', id)
 }
 
-const onSeeMyClimbs = (event) => {
-  event.preventDefault()
-
-  const data = store.user._id
-
-  api.myClimbs(data)
-    .then(ui.onSeeMyClimbsSuccess)
-    .catch(ui.onError)
-}
+// const onShowClimb = (event) => {
+//   event.preventDefault()
+//
+//   const data = getFormFields(event.target)
+//   console.log('form: ', data)
+//
+//   api.myClimbs(data)
+//     .then(ui.onShowClimbSuccess)
+//     .catch(ui.onShowClimbFailure)
+// }
 
 module.exports = {
   onSignUp,
@@ -129,7 +130,7 @@ module.exports = {
   onSeeAllClimbs,
   onDeleteClimb,
   onUpdateClimb,
-  onSeeMyClimbs,
+  // onShowClimb,
   onSignOut,
   onUpdateClimbForm
 }

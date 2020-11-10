@@ -47,6 +47,7 @@ const onSignOutSuccess = () => {
   $('#signed-in-user').hide()
   $('#new-climb-form').hide()
   $('#see-all-climbs-form').hide()
+  $('#see-all-climbs').hide()
 
   $('#sign-up-form').show()
   $('#sign-in-form').show()
@@ -96,15 +97,20 @@ const onSeeAllClimbsSuccess = (response) => {
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
       <p>ID: ${currentClimb._id}</p>
-
-      <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
-
-      <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
-
       <br>
-      `)
+
+    <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
+
+    <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
+  `)
     $('#see-all-climbs').append(climbHTML)
   })
+  // if currentUser === true if so add the buttons to the string
+  const currentUser = store.user._id
+  console.log('user: ', currentUser)
+
+  const climbId = response
+  console.log('climbId: ', climbId)
 }
 
 const onSeeAllClimbsFailure = () => {
@@ -130,7 +136,7 @@ const onDeleteSuccess = () => {
 }
 
 const onDeleteFailure = () => {
-  $('#message').text('Failed to delete a climb, please try again!')
+  $('#message').text('Cannot delete this climb, you do not own this climb!')
 }
 
 const onUpdateSuccess = () => {
@@ -152,27 +158,28 @@ const onUpdateSuccess = () => {
 }
 
 const onUpdateFailure = () => {
-  $('#message').text('Failed to update a climb, please try again!')
+  $('#message').text('Cannot update this climb, you do not own this climb!')
 }
 
-const onSeeMyClimbsSuccess = (response) => {
-  $()
-  const myClimbs = response.climbs
-  console.log('response.climbs: ', myClimbs)
-
-  myClimbs.forEach(function (myCurrentClimbs) {
-    const myClimbsHTML = (`
-    <h3>Name: ${myCurrentClimbs.name}</h3>
-    <p>Grade: ${myCurrentClimbs.grade}</p>
-    <p>Rating: ${myCurrentClimbs.rating}</p>
-    <p>ID: ${myCurrentClimbs._id}</p>
-    <button class="climb-delete" type="button" data-climb-id=${myCurrentClimbs._id} value="Delete Climb!">Delete climb!</button>
-    <br>
-    `)
-    $('#see-my-climbs').html(myClimbsHTML)
-    $('form').trigger('reset')
-  })
-}
+// const onShowClimbSuccess = (response) => {
+//   console.log('response: ', response)
+//
+//   // print out myClimbs
+//   const climbHTML = (`
+//       <h3>Name: ${response.climb.name}</h3>
+//       <p>Grade: ${response.climb.grade}</p>
+//       <p>Rating: ${response.climb.rating}</p>
+//       <p>ID: ${response.climb._id}</p>
+//       <br>
+//       `)
+//   $('#see-my-climb').append(climbHTML)
+//   $('form').trigger('reset')
+// }
+//
+// const onShowClimbFailure = (response) => {
+//   console.log(response)
+//   $('#message').text('failed to get climb, please try again!')
+// }
 
 module.exports = {
   onSignUpSuccess,
@@ -195,7 +202,8 @@ module.exports = {
   onUpdateSuccess,
   onUpdateFailure,
 
-  onSeeMyClimbsSuccess,
+  // onShowClimbSuccess,
+  // onShowClimbFailure,
 
   onSignOutSuccess,
   onSignOutFailure
