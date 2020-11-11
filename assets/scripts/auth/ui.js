@@ -100,9 +100,9 @@ const onSeeAllClimbsSuccess = (response) => {
       <p>ID: ${currentClimb._id}</p>
       <br>
 
-    <button class="climb-delete" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
+    <button class="climb-delete btn-sm btn-dark" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
 
-    <button class="climb-update" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
+    <button class="climb-update btn-sm btn-dark" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
   `)
     $('#see-all-climbs').append(climbHTML)
   })
@@ -110,8 +110,8 @@ const onSeeAllClimbsSuccess = (response) => {
   const currentUser = store.user._id
   console.log('user: ', currentUser)
 
-  const climbId = response
-  console.log('climbId: ', climbId)
+  const climbOwner = climbs
+  console.log('climbOwner: ', climbOwner)
 }
 
 const onSeeAllClimbsFailure = () => {

@@ -12,25 +12,30 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="container">
+    <div class="messages">
       <h1>Climbing Kings Bluff</h1>
       <p id="message"></p>
       <p id="signed-in-user"></p>
+    </div>
 
   <section>
     <form id="sign-up-form">
-      <fieldset>
+      <fieldset class="form-group">
+        <div>
         <legend>Sign-up!</legend>
 
-        <label for="sign-up-email">Email:</label>
-        <input id="sign-up-email" type="email" name="credentials[email]" placeholder="example@email.com">
+        <!-- <label for="sign-up-email">Email:</label> -->
+        <input id="sign-up-email" class="text-center" type="email" name="credentials[email]" placeholder="email">
 
-        <label for="sign-up-password">Password:</label>
-        <input id="sign-up-password" type="password" name="credentials[password]" placeholder="password">
 
-        <label for="sign-up-password_confirmation">Confirm Password:</label>
-        <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+        <!-- <label for="sign-up-password">Password:</label> -->
+        <input id="sign-up-password" class="text-center" type="password" name="credentials[password]" placeholder="password">
 
-        <input type="submit" value="Sign-up!">
+        <!-- <label for="sign-up-password_confirmation">Confirm Password:</label> -->
+        <input id="sign-up-password_confirmation" class="text-center" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Sign-up!">
 
       </fieldset>
     </form>
@@ -38,16 +43,17 @@
 
   <section>
     <form id="sign-in-form">
-      <fieldset>
+      <fieldset class="form-group">
+        <div>
         <legend>Sign in!</legend>
 
-        <label for="sign-in-email">Email:</label>
-        <input id="sign-in-email" type="email" name="credentials[email]" placeholder="example@email.com">
+        <!-- <label for="sign-in-email">Email:</label> -->
+        <input id="sign-in-email" class="text-center" type="email" name="credentials[email]" placeholder="email">
 
-        <label for="sign-in-password">Password:</label>
-        <input id="sign-in-password" type="password" name="credentials[password]" placeholder="password">
-
-        <input type="submit" value="Sign in!">
+        <!-- <label for="sign-in-password">Password:</label> -->
+        <input id="sign-in-password" class="text-center" type="password" name="credentials[password]" placeholder="password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Sign in!">
 
     </fieldset>
     </form>
@@ -56,26 +62,37 @@
   <section>
   <form id="sign-out-form">
     <fieldset>
-      <legend>Sign Out!</legend>
-
-      <input type="submit" value="Sign out!">
-
+      <div class="signout">
+      <input class="btn btn-lg btn-dark" type="submit" value="Sign out!">
+    </div>
     </fieldset>
   </form>
 </section>
 
   <section>
+    <form id="see-all-climbs-form">
+      <fieldset class="form-group">
+      <div class="all-climbs">
+        <input class="btn btn-lg btn-dark" type="submit" value="See all Climbs!">
+      </div>
+      </fieldset>
+    </form>
+  </section>
+
+
+  <section>
     <form id="change-password-form">
-      <fieldset>
+      <fieldset class="form-group">
+      <div>
         <legend>Change password!</legend>
 
-        <label for="old-password">Old passwaord:</label>
-        <input id="old-password" type="password" name="passwords[old]" placeholder="old password">
+        <!-- <label for="old-password">Old passwaord:</label> -->
+        <input id="old-password" class="text-center" type="password" name="passwords[old]" placeholder="old password">
 
-        <label for="new-password">New password</label>
-        <input id="new-password" type="password" name="passwords[new]" placeholder="new password">
-
-        <input type="submit" value="Change password">
+        <!-- <label for="new-password">New password</label> -->
+        <input id="new-password" class="text-center" type="password" name="passwords[new]" placeholder="new password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Change password">
 
       </fieldset>
     </form>
@@ -83,35 +100,24 @@
 
   <section>
     <form id="new-climb-form">
-      <fieldset>
-        <legend>Log a new climb!</legend>
+      <fieldset class="form-group">
+      <div>
+        <legend>Create a new climb!</legend>
 
-        <label for="new-climb-name">Climb name:</label>
-        <input id="new-climb-name" name="climb[name]" type="text" placeholder="name">
+        <!-- <label for="new-climb-name">Climb name:</label> -->
+        <input id="new-climb-name" class="text-center" name="climb[name]" type="text" placeholder="name">
 
-        <label for="new-climb-grade">Grade:</label>
-        <input id="new-climb-grade" name="climb[grade]" type="text" placeholder="grade">
+        <!-- <label for="new-climb-grade">Grade:</label> -->
+        <input id="new-climb-grade" class="text-center" name="climb[grade]" type="text" placeholder="grade">
 
-        <label for="new-climb-rating">Rating:</label>
-        <input id="new-climb-rating" name="climb[rating]" type="text" placeholder="rating 1-5">
-
-        <input type="submit" value="Create climb!">
+        <!-- <label for="new-climb-rating">Rating:</label> -->
+        <input id="new-climb-rating" class="text-center" name="climb[rating]" type="text" placeholder="rating 1-5">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Create climb!">
 
     </fieldset>
     </form>
   </section>
-
-  <section>
-    <form id="see-all-climbs-form">
-      <fieldset>
-        <legend>Get all climbs!</legend>
-
-        <input type="submit" value="Get all Climbs!">
-
-      </fieldset>
-    </form>
-  </section>
-  <p id="see-all-climbs"></p>
 
   <!-- <section>
     <form id="show-climb-form">
@@ -125,29 +131,32 @@
     </form>
   </section>
   <p id="see-my-climb"></p> -->
-
+  <p id="update-climb-message" class="user-feedback"></p>
   <p id="delte-climb-message" class="user-feedback"></p>
+  <p id="see-all-climbs"></p>
+
 
   <section>
     <form id="climb-update-form">
-      <fieldset>
-        <legend>Update one climb!</legend>
+      <fieldset class="form-group">
+        <div>
+        <legend>Update Information</legend>
 
-        <label for="update-climb-name">Climb name:</label>
-        <input id="update-climb-name" name="climb[name]" type="text" placeholder="name">
+        <!-- <label for="update-climb-name">Climb name:</label> -->
+        <input id="update-climb-name" class="text-center" name="climb[name]" type="text" placeholder="name">
 
-        <label for="update-climb-grade">Grade:</label>
-        <input id="update-climb-grade" name="climb[grade]" type="text" placeholder="grade">
+        <!-- <label for="update-climb-grade">Grade:</label> -->
+        <input id="update-climb-grade" class="text-center" name="climb[grade]" type="text" placeholder="grade">
 
-        <label for="update-climb-rating">Rating:</label>
-        <input id="update-climb-rating" name="climb[rating]" type="text" placeholder="rating 1-5">
-
-        <input type="submit" value="Submit update!">
+        <!-- <label for="update-climb-rating">Rating:</label> -->
+        <input id="update-climb-rating" class="text-center" name="climb[rating]" type="text" placeholder="rating 1-5">
+        </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Submit update!">
 
       </fieldset>
     </form>
   </section>
-  <p id="update-climb-message" class="user-feedback"></p>
 
+</div>
     </body>
 </html>
