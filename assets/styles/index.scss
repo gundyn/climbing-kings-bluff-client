@@ -10,13 +10,18 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
+  font-family: 'Trirong', serif;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
 
-.messages {
+h1 {
   text-align: center;
+}
+
+h3 {
+  margin-top: 20px;
 }
 
 .form-group {
@@ -35,4 +40,8 @@ body {
 .all-climbs {
   text-align: center;
   margin-bottom: 15px;
+}
+
+.user-feedback {
+  text-align: center;
 }

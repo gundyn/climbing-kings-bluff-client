@@ -10,14 +10,17 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Trirong:ital,wght@1,600;1,800&display=swap');
+      </style>
     </head>
     <body>
       <div class="container">
-    <div class="messages">
       <h1>Climbing Kings Bluff</h1>
-      <p id="message"></p>
-      <p id="signed-in-user"></p>
-    </div>
+      <p id="message" class="user-feedback"></p>
+      <p id="signed-in-user" class="user-feedback"></p>
+      <p id="update-climb-message" class="user-feedback"></p>
+      <p id="delte-climb-message" class="user-feedback"></p>
 
   <section>
     <form id="sign-up-form">
@@ -131,10 +134,6 @@
     </form>
   </section>
   <p id="see-my-climb"></p> -->
-  <p id="update-climb-message" class="user-feedback"></p>
-  <p id="delte-climb-message" class="user-feedback"></p>
-  <p id="see-all-climbs"></p>
-
 
   <section>
     <form id="climb-update-form">
@@ -156,6 +155,8 @@
       </fieldset>
     </form>
   </section>
+
+    <p id="see-all-climbs" class="user-feedback"></p>
 
 </div>
     </body>
