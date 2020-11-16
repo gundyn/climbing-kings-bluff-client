@@ -6,10 +6,10 @@ Project Repo
 'https://github.com/gundyn/climbing-kings-bluff-client'
 
 Deployed Client
-''
+'https://gundyn.github.io/climbing-kings-bluff-client/'
 
-Climbing Kings Bluff API 
-''
+Climbing Kings Bluff API - Deployed
+'https://infinite-dawn-24722.herokuapp.com/'
 
 Planning Story
 I looked at the requirements for the app then laid out a plan to tackle each feature. I also needed to connect this project to another API project I had built, so using CRUD I could access the necessary API routes to achieve the app requirements. 

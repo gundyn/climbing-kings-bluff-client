@@ -90,28 +90,35 @@ const onSeeAllClimbsSuccess = (response) => {
 
   const climbs = response.climbs
 
+  let climbHTML
+
   $('#see-all-climbs').html('')
   // lets me display all climbs in the browser
   climbs.forEach(function (currentClimb) {
-    const climbHTML = (`
+    console.log('currentClimb owner: ', currentClimb.owner)
+    console.log('user id: ', store.user._id)
+    if (store.user._id === currentClimb.owner) {
+      climbHTML = (`
+      <h3>Name: ${currentClimb.name}</h3>
+      <p>Grade: ${currentClimb.grade}</p>
+      <p>Rating: ${currentClimb.rating}</p>
+      <p>ID: ${currentClimb._id}</p>
+      <button class="climb-delete btn-sm btn-dark" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
+      <button class="climb-update btn-sm btn-dark" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
+      <br>
+  `)
+    } else {
+      climbHTML = (`
       <h3>Name: ${currentClimb.name}</h3>
       <p>Grade: ${currentClimb.grade}</p>
       <p>Rating: ${currentClimb.rating}</p>
       <p>ID: ${currentClimb._id}</p>
       <br>
-
-    <button class="climb-delete btn-sm btn-dark" type="button" data-climb-id=${currentClimb._id} value="Delete Climb!">Delete climb!</button>
-
-    <button class="climb-update btn-sm btn-dark" type="click" data-climb-id=${currentClimb._id} value="Update Climb">Update climb!</button>
-  `)
+      `)
+    }
     $('#see-all-climbs').append(climbHTML)
   })
   // if currentUser === true if so add the buttons to the string
-  const currentUser = store.user._id
-  console.log('user: ', currentUser)
-
-  const climbOwner = climbs
-  console.log('climbOwner: ', climbOwner)
 }
 
 const onSeeAllClimbsFailure = () => {
