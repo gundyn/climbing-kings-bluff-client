@@ -55,4 +55,4 @@ add a map of the local area
   
 Images
 wireframe:
-'https://imgur.com/VGPQ2Y3'
+![alt text](https://imgur.com/VGPQ2Y3)
