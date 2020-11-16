@@ -71,7 +71,7 @@ const onChangePasswordSuccess = (response) => {
 }
 
 const onChangePasswordFailure = () => {
-  $('#message').text('Password change successful failed, try again!')
+  $('#message').text('Password change failed, try again!')
 }
 
 const onNewClimbSuccess = (response) => {
