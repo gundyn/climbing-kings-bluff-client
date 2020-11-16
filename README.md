@@ -54,6 +54,7 @@ All forms must clear after submit success and user sign-out
 - add a map of the local area
   -directions to the area
   
-Images
-wireframe:
+**Images**
+
+*wireframe:*
 ![Imgur Image](https://imgur.com/VGPQ2Y3.jpg)
