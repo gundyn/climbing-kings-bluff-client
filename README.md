@@ -37,13 +37,13 @@ as a user I want to leave a reveiw of the climb so other users can see what I th
 as a user I want to be able to update my reveiw incase I change my mind about a climb
 
 
-Technologies Used
-..* JavaScript
-..* HTML
-..* SCSS 
-..* JQUERY
-..* Express
-..* Mongoose
+**Technologies Used**
+- JavaScript
+- HTML
+- SCSS 
+- JQUERY
+- Express
+- Mongoose
 
 Unsolved Problems
 removing delete and update button by current user logged in 
