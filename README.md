@@ -1,4 +1,4 @@
-# H1 Climbing Kings Bluff Client: A way to log climbs at a local location
+# Climbing Kings Bluff Client: A way to log climbs at a local location
 
 This application allows a user to store climbs. As a climber it is always fun to be able to look back on what you have done, and look at what you want to attempt. 
 
