@@ -2,11 +2,14 @@
 
 This application allows a user to store climbs. As a climber it is always fun to be able to look back on what you have done, and look at what you want to attempt. 
 
-*Project Repo*
+*Climbing Kings Bluff client repo*
 (https://github.com/gundyn/climbing-kings-bluff-client)
 
-*Deployed Client*
+*Climbing Kings Bluff client deployed link*
 (https://gundyn.github.io/climbing-kings-bluff-client/)
+
+*Climbing Kings Bluff api repo*
+(https://github.com/gundyn/climbing-kings-bluff-api)
 
 *Climbing Kings Bluff API - Deployed*
 (https://infinite-dawn-24722.herokuapp.com/)
