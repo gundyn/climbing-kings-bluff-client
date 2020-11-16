@@ -56,4 +56,4 @@ All forms must clear after submit success and user sign-out
   
 Images
 wireframe:
-![image](https://imgur.com/VGPQ2Y3)
+![Imgur Image](https://imgur.com/VGPQ2Y3.jpg)
