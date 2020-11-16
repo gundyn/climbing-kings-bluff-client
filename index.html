@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Climbing Kings Bluff</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Trirong:ital,wght@1,600;1,800&display=swap');
+      </style>
+    </head>
+    <body>
+      <div class="container">
+      <h1>Climbing Kings Bluff</h1>
+      <p id="message" class="user-feedback"></p>
+      <p id="signed-in-user" class="user-feedback"></p>
+      <p id="update-climb-message" class="user-feedback"></p>
+      <p id="delte-climb-message" class="user-feedback"></p>
+
+  <section>
+    <form id="sign-up-form">
+      <fieldset class="form-group">
+        <div>
+        <legend>Sign-up!</legend>
+
+        <input id="sign-up-email" class="text-center" type="email" name="credentials[email]" placeholder="email">
+
+        <input id="sign-up-password" class="text-center" type="password" name="credentials[password]" placeholder="password">
+
+        <input id="sign-up-password_confirmation" class="text-center" type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Sign-up!">
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="sign-in-form">
+      <fieldset class="form-group">
+        <div>
+        <legend>Sign in!</legend>
+
+        <input id="sign-in-email" class="text-center" type="email" name="credentials[email]" placeholder="email">
+
+        <input id="sign-in-password" class="text-center" type="password" name="credentials[password]" placeholder="password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Sign in!">
+
+    </fieldset>
+    </form>
+  </section>
+
+  <section>
+  <form id="sign-out-form">
+    <fieldset>
+      <div class="signout">
+      <input class="btn btn-lg btn-dark" type="submit" value="Sign out!">
+    </div>
+    </fieldset>
+  </form>
+</section>
+
+  <section>
+    <form id="see-all-climbs-form">
+      <fieldset class="form-group">
+      <div class="all-climbs">
+        <input class="btn btn-lg btn-dark" type="submit" value="See all Climbs!">
+      </div>
+      </fieldset>
+    </form>
+  </section>
+
+
+  <section>
+    <form id="change-password-form">
+      <fieldset class="form-group">
+      <div>
+        <legend>Change password!</legend>
+
+        <input id="old-password" class="text-center" type="password" name="passwords[old]" placeholder="old password">
+
+        <input id="new-password" class="text-center" type="password" name="passwords[new]" placeholder="new password">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Change password">
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="new-climb-form">
+      <fieldset class="form-group">
+      <div>
+        <legend>Create a new climb!</legend>
+
+        <input id="new-climb-name" class="text-center" name="climb[name]" type="text" placeholder="name">
+
+        <input id="new-climb-grade" class="text-center" name="climb[grade]" type="text" placeholder="grade">
+
+        <input id="new-climb-rating" class="text-center" name="climb[rating]" type="text" placeholder="rating 1-5">
+      </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Create climb!">
+
+    </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <form id="climb-update-form">
+      <fieldset class="form-group">
+        <div>
+        <legend>Update Information</legend>
+
+        <input id="update-climb-name" class="text-center" name="climb[name]" type="text" placeholder="name">
+>
+        <input id="update-climb-grade" class="text-center" name="climb[grade]" type="text" placeholder="grade">
+
+        <input id="update-climb-rating" class="text-center" name="climb[rating]" type="text" placeholder="rating 1-5">
+        </div>
+        <input class="btn btn-sm btn-dark" type="submit" value="Submit update!">
+
+      </fieldset>
+    </form>
+  </section>
+
+    <p id="see-all-climbs" class="user-feedback"></p>
+
+</div>
+    </body>
+</html>
