@@ -38,12 +38,12 @@ as a user I want to be able to update my reveiw incase I change my mind about a 
 
 
 Technologies Used
-JavaScript
-HTML
-SCSS 
-JQUERY
-Express
-Mongoose
+..* JavaScript
+..* HTML
+..* SCSS 
+..* JQUERY
+..* Express
+..* Mongoose
 
 Unsolved Problems
 removing delete and update button by current user logged in 
