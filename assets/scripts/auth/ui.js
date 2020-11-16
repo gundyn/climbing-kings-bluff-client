@@ -70,6 +70,10 @@ const onChangePasswordSuccess = (response) => {
   $('#change-password-form')[0].reset()
 }
 
+const onChangePasswordFailure = () => {
+  $('#message').text('Password change successful failed, try again!')
+}
+
 const onNewClimbSuccess = (response) => {
   $('#message').text('New climb added!')
   $('#see-all-climbs').hide()
@@ -95,8 +99,6 @@ const onSeeAllClimbsSuccess = (response) => {
   $('#see-all-climbs').html('')
   // lets me display all climbs in the browser
   climbs.forEach(function (currentClimb) {
-    console.log('currentClimb owner: ', currentClimb.owner)
-    console.log('user id: ', store.user._id)
     if (store.user._id === currentClimb.owner) {
       climbHTML = (`
       <h3>Name: ${currentClimb.name}</h3>
@@ -118,7 +120,6 @@ const onSeeAllClimbsSuccess = (response) => {
     }
     $('#see-all-climbs').append(climbHTML)
   })
-  // if currentUser === true if so add the buttons to the string
 }
 
 const onSeeAllClimbsFailure = () => {
@@ -144,7 +145,7 @@ const onDeleteSuccess = () => {
 }
 
 const onDeleteFailure = () => {
-  $('#message').text('Cannot delete this climb, you do not own this climb!')
+  $('#message').text('Failed to delete climb, try again!')
 }
 
 const onUpdateSuccess = () => {
@@ -166,28 +167,8 @@ const onUpdateSuccess = () => {
 }
 
 const onUpdateFailure = () => {
-  $('#message').text('Cannot update this climb, you do not own this climb!')
+  $('#message').text('Failed to update climb, try again!')
 }
-
-// const onShowClimbSuccess = (response) => {
-//   console.log('response: ', response)
-//
-//   // print out myClimbs
-//   const climbHTML = (`
-//       <h3>Name: ${response.climb.name}</h3>
-//       <p>Grade: ${response.climb.grade}</p>
-//       <p>Rating: ${response.climb.rating}</p>
-//       <p>ID: ${response.climb._id}</p>
-//       <br>
-//       `)
-//   $('#see-my-climb').append(climbHTML)
-//   $('form').trigger('reset')
-// }
-//
-// const onShowClimbFailure = (response) => {
-//   console.log(response)
-//   $('#message').text('failed to get climb, please try again!')
-// }
 
 module.exports = {
   onSignUpSuccess,
@@ -197,6 +178,7 @@ module.exports = {
   onSignInFailure,
 
   onChangePasswordSuccess,
+  onChangePasswordFailure,
 
   onNewClimbSuccess,
   onNewClimbFailure,
@@ -209,9 +191,6 @@ module.exports = {
 
   onUpdateSuccess,
   onUpdateFailure,
-
-  // onShowClimbSuccess,
-  // onShowClimbFailure,
 
   onSignOutSuccess,
   onSignOutFailure

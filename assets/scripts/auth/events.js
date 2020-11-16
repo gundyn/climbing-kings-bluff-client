@@ -111,17 +111,6 @@ const onUpdateClimb = (event) => {
   store.id = id
 }
 
-// const onShowClimb = (event) => {
-//   event.preventDefault()
-//
-//   const data = getFormFields(event.target)
-//   console.log('form: ', data)
-//
-//   api.myClimbs(data)
-//     .then(ui.onShowClimbSuccess)
-//     .catch(ui.onShowClimbFailure)
-// }
-
 module.exports = {
   onSignUp,
   onSignIn,

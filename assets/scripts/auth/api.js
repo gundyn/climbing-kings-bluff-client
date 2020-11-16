@@ -63,7 +63,6 @@ const seeClimbs = (data) => {
 }
 
 const deleteClimb = (climbId) => {
-  console.log('data:', climbId)
   return $.ajax({
     url: config.apiUrl + '/climbs/' + climbId,
     method: 'DELETE',
@@ -84,17 +83,6 @@ const updateClimb = (data, id) => {
   })
 }
 
-// const myClimbs = (data) => {
-//   console.log('data: ', data)
-//   return $.ajax({
-//     url: config.apiUrl + '/climbs/' + data.climb.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     }
-//   })
-// }
-//
 module.exports = {
   signUp,
   signIn,
