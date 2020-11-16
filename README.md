@@ -12,6 +12,7 @@ This application allows a user to store climbs. As a climber it is always fun to
 (https://infinite-dawn-24722.herokuapp.com/)
 
 **Planning Story**
+
 I looked at the requirements for the app then laid out a plan to tackle each feature. I also needed to connect this project to another API project I had built, so using CRUD I could access the necessary API routes to achieve the app requirements. 
 -Requirements-
 Signup with email, password, and password confirmation.
@@ -55,4 +56,4 @@ All forms must clear after submit success and user sign-out
   
 Images
 wireframe:
-![wireframe](https://imgur.com/VGPQ2Y3)
+![image](https://imgur.com/VGPQ2Y3)
