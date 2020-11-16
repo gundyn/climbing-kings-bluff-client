@@ -1,15 +1,15 @@
-Climbing Kings Bluff Client: A way to log climbs at a local location
+# H1 Climbing Kings Bluff Client: A way to log climbs at a local location
 
 This application allows a user to store climbs. As a climber it is always fun to be able to look back on what you have done, and look at what you want to attempt. 
 
 Project Repo
-'https://github.com/gundyn/climbing-kings-bluff-client'
+(https://github.com/gundyn/climbing-kings-bluff-client)
 
 Deployed Client
-'https://gundyn.github.io/climbing-kings-bluff-client/'
+(https://gundyn.github.io/climbing-kings-bluff-client/)
 
 Climbing Kings Bluff API - Deployed
-'https://infinite-dawn-24722.herokuapp.com/'
+(https://infinite-dawn-24722.herokuapp.com/)
 
 Planning Story
 I looked at the requirements for the app then laid out a plan to tackle each feature. I also needed to connect this project to another API project I had built, so using CRUD I could access the necessary API routes to achieve the app requirements. 
